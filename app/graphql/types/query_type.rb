@@ -11,6 +11,11 @@ module Types
     def posts
       Post.all
     end
+
+    field :users, [UserType], null: true
+    def users
+      User.all
+    end
   
 
   end

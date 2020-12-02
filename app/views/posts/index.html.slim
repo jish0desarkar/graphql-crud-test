@@ -4,6 +4,7 @@ table
       th ID
       th Title
       th Body
+      th created by
 
   tbody
     - Post.all.each do |post| 
@@ -11,3 +12,23 @@ table
         td = post.id
         td = post.title
         td = post.body
+        td = post.user.name
+
+table
+  thead
+    tr
+      th ID
+      th Username
+
+  tbody
+    - User.all.each do |user| 
+        tr
+        td = user.id
+        td = user.name
+
+
+h4 Commands
+p 1. to create entry - curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation{createPost(input: {title: \"asdasdasdasd\", body: \"ASDADASDASDASDda\"}) {clientMutationId}}"}' 
+p If you get 'You need to login' then run 
+
+p 2. to read -  curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H "Content-Type: application/json" -d '{ "query": "{ posts {id title body} }" }'
