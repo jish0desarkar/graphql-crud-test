@@ -3,7 +3,7 @@ module Mutations
   class CreatePost < Mutations::BaseMutation
     def ready?(**_args)
       if !context[:current_user]
-        raise GraphQL::ExecutionError, "You need to login!"
+        raise GraphQL::ExecutionError, "No user authenticated!"
       else
         true
       end
