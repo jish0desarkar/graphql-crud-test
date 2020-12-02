@@ -13,13 +13,18 @@ table
         td = post.body
 
 
-h4 Terminal Commands
-p 1. to create run curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation{createPost(input: {title: \"Title 1\", body: \"Body 1\"}) {clientMutationId}}"}' 
-p If you get 'No user authenticated' then run curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation{createUser(input: {name: \"Jishnu\"}) {clientMutationId}}"}'
+h3 Terminal Commands
+h4 1. to create run 
+p curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation{createPost(input: {title: \"Title 1\", body: \"Body 1\"}) {clientMutationId}}"}' 
+h4  If you get 'No user authenticated' then run 
+p curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation{createUser(input: {name: \"Jishnu\"}) {clientMutationId}}"}'
 
 
-p 2. to read run curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H "Content-Type: application/json" -d '{ "query": "{ posts {id title body} }" }'
+h4 2. to read run 
+p curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H "Content-Type: application/json" -d '{ "query": "{ posts {id title body} }" }'
 
-p 3. to update run curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation {updatePost(input: {id: \"1\", attributes: {title: \"Updated title\", body: \"updated body\"}}) {clientMutationId}}"}'
+h4 3. to update run
+p curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation {updatePost(input: {id: \"1\", attributes: {title: \"Updated title\", body: \"updated body\"}}) {clientMutationId}}"}'
 
-p 4. to delete run curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation {destroyPost(input: {id: \"1\"}) {clientMutationId}}"}'
+h4 4. to delete run
+p curl -X POST https://graphql-crud-test.herokuapp.com/graphql -H 'Content-Type: application/json' -d '{ "query": "mutation {destroyPost(input: {id: \"1\"}) {clientMutationId}}"}'
